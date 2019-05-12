@@ -60,12 +60,6 @@
         padding: 15px;
         color: rgb(255, 255, 255);;
     }
-    .btn {
-        margin-right: 15px;
-    }
-    .btn-warning {
-        color: #fff !important;
-    }
 </style>
 @endsection
 

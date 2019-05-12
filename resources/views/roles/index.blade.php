@@ -56,9 +56,6 @@
         padding: 15px;
         color: rgb(255, 255, 255);;
     }
-    .btn {
-        margin-right: 15px;
-    }
 </style>
 @endsection
 
