@@ -6,6 +6,13 @@
 
 The following instructions assumes that you are familiar with the necessary technologies required to carry out installation and that you have them already insalled in your machine.
 
+Based on: 
+* php 7.3.3
+* Laravel 5.8.15
+* phpunit 7.5.9
+* mysql/mariadb 10.1.38-MariaDB
+
+
 ### Clone the repository:
 ```
 
@@ -76,3 +83,15 @@ $ php artisan serve
 ```
 
 Browse to http://localhost:8000
+
+# API resources
+
+**Get Users**
+
+http://localhost:8000/api/v1/users
+
+
+**Get Posts**
+
+http://localhost:8000/api/v1/posts
+
