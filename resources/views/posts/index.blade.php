@@ -34,14 +34,13 @@
                                         <td>{{ $post['title'] }}</td>
                                         <td>{{ $post->user->name }}</td>
                                         <td>{{ $post['created_at'] }}</td>
-                                        <td>
+                                        <td width="30%">
                                             <a href="{{ route('posts.show',$post->id) }}" class="btn btn-sm btn-primary">View</a> 
-
                                             @if(Auth::id() === $post->user->id)
-                                            <a href="{{ route('posts.edit',$post->id) }}" class="btn btn-sm btn-success">Edit</a>
-                                            {!! Form::open(['method' => 'DELETE', 'route' => ['posts.destroy', $post->id], 'style' => 'display:inline']) !!}
-                                            {!! Form::submit('Delete', ['class' => 'btn btn-sm btn-danger']) !!}
-                                            {!! Form::close() !!}
+                                                <a href="{{ route('posts.edit',$post->id) }}" class="btn btn-sm btn-warning">Edit</a>
+                                                {!! Form::open(['method' => 'DELETE', 'route' => ['posts.destroy', $post->id],'style'=>'display:inline']) !!}
+                                                {!! Form::submit('Delete', ['class' => 'btn btn-sm btn-danger']) !!}
+                                                {!! Form::close() !!}
                                             @endif
                                         </td>
                                     </tr>
@@ -63,6 +62,9 @@
     }
     .btn {
         margin-right: 15px;
+    }
+    .btn-warning {
+        color: #fff !important;
     }
 </style>
 @endsection
