@@ -34,9 +34,9 @@
                                     <td>{{ $role['name'] }}</td>
                                     <td>{{ $role['guard_name'] }}</td>
                                     <td>{{ $role['created_at'] }}</td>
-                                    <td>
-                                        <a href="{{ route('roles.edit',$role->id) }}" class="btn btn-sm btn-success pull-left">Edit</a> 
-                                        {!! Form::open(['method' => 'DELETE', 'route' => ['roles.destroy', $role->id],'class'=>'pull-left']) !!}
+                                    <td width="30%">
+                                        <a href="{{ route('roles.edit',$role->id) }}" class="btn btn-sm btn-success">Edit</a> 
+                                        {!! Form::open(['method' => 'DELETE', 'route' => ['roles.destroy', $role->id],'style'=>'display:inline']) !!}
                                         {!! Form::submit('Delete', ['class' => 'btn btn-sm btn-danger']) !!}
                                         {!! Form::close() !!}
                                     </td>
@@ -55,6 +55,9 @@
     .bg-success, .bg-error {
         padding: 15px;
         color: rgb(255, 255, 255);;
+    }
+    .btn {
+        margin-right: 15px;
     }
 </style>
 @endsection

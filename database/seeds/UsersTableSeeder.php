@@ -20,7 +20,6 @@ class UsersTableSeeder extends Seeder
             'password' => Hash::make('secret')
         ]);
         $admin->assignRole('admin');
-        $admin->assignRole('user');
 
         $user = User::create([
             'name' => 'user',
