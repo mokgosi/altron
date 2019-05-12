@@ -84,6 +84,16 @@ $ php artisan serve
 
 Browse to http://localhost:8000
 
+
+**Login details**
+
+username: admin@admin.com
+password: secret
+
+username: user@admin.com
+password: secret
+
+
 # API resources
 
 **Get Users**
