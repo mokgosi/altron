@@ -38,10 +38,10 @@
                                             <a href="{{ route('posts.show',$post->id) }}" class="btn btn-sm btn-primary">View</a> 
                                             @if(Auth::id() === $post->user->id)
                                                 <a href="{{ route('posts.edit',$post->id) }}" class="btn btn-sm btn-warning">Edit</a>
-                                                {!! Form::open(['method' => 'DELETE', 'route' => ['posts.destroy', $post->id],'style'=>'display:inline']) !!}
-                                                {!! Form::submit('Delete', ['class' => 'btn btn-sm btn-danger']) !!}
-                                                {!! Form::close() !!}
                                             @endif
+                                            {!! Form::open(['method' => 'DELETE', 'route' => ['posts.destroy', $post->id],'style'=>'display:inline']) !!}
+                                            {!! Form::submit('Delete', ['class' => 'btn btn-sm btn-danger']) !!}
+                                            {!! Form::close() !!}
                                         </td>
                                     </tr>
                                 @endforeach
