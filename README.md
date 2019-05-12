@@ -4,17 +4,19 @@
 
 ## Installation Instructions
 
+The following instructions assumes that you are familiar with the necessary technologies required to carry out installation and that you have them already insalled in your machine.
+
 ### Clone the repository:
 ```
 
-git clone git@github.com:mokgosi/altron.git
+$ git clone git@github.com:mokgosi/altron.git
 
 ```
 
 ### Install dependencies
 ```
 
-composer update
+$ composer update
 
 ```
 
@@ -31,8 +33,8 @@ CREATE DATABASE dbname;
 
 ```
 
-cp .env.example .env
-php artisan key:generate
+$ cp .env.example .env
+$ php artisan key:generate
 
 ``` 
 
@@ -57,3 +59,20 @@ $ php artisan migrate
 $ php artisan db:seed
 
 ```
+
+**Run tests**
+```
+
+$ vendor\bin\phpunit
+
+```
+
+**Start your local server**
+```
+
+$ cd to-your-project-root
+$ php artisan serve
+
+```
+
+Browse to http://localhost:8000
