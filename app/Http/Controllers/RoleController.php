@@ -54,7 +54,7 @@ class RoleController extends Controller
             $request->session()->flash('error', 'Create new role failed.');
         }
         
-        $role = $this->roleRepository->create($request->all());
+        $role = $this->roleRepository->create($request->only('name','web'));
         $role->syncPermissions($request->input('permissions'));
         $request->session()->flash('success', 'New role created.');
         return redirect()->route('roles.index');
