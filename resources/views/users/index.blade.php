@@ -32,7 +32,7 @@
                                     <tr>
                                         <td>{{ $user['name'] }}</td>
                                         <td>{{ $user['email'] }}</td>
-                                        <td>{{ $user->getRoleNames() }}</td>
+                                        <td>{{ $user->getRoleNames()->join(',') }}</td>
                                         <td width="30%">
                                             <a href="{{ route('users.show',$user->id) }}" class="btn btn-sm btn-primary">View</a> 
                                             <a href="{{ route('users.edit',$user->id) }}" class="btn btn-sm btn-success pull-left">Edit</a> 

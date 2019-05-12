@@ -11,4 +11,5 @@ class Role extends Model
     ];
     //
     protected $guard_name = 'web';
+
 }
