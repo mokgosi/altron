@@ -15,7 +15,8 @@ class PostRepository extends BaseRepository implements PostRepositoryInterface
      */
     public function __construct(Post $post)
     {
-        $this->model = $post;
+        parent:: __construct($post);
+        // $this->model = $post;
     }
 
     /**
@@ -35,10 +36,10 @@ class PostRepository extends BaseRepository implements PostRepositoryInterface
      * @param array $attributes
      * @return mixed
      */
-    public function update(array $attributes)
+    public function update(array $attributes, $post)
     {
         try {
-            return $this->model->update($attributes);
+            return $this->model->find($post->id)->update($attributes);
         } catch (QueryException $e) {
             throw new \Exception($e);
         }

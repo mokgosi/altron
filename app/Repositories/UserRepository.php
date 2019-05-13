@@ -36,10 +36,10 @@ class UserRepository extends BaseRepository implements UserRepositoryInterface
      * @param array $attributes
      * @return mixed
      */
-    public function update(array $attributes)
+    public function update(array $attributes, $user)
     {
         try {
-            return $this->model->update($attributes);
+            return $this->model->find($user->id)->update($attributes);
         } catch (QueryException $e) {
             throw new \Exception($e);
         }

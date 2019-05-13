@@ -97,7 +97,7 @@ class UserController extends Controller
             $request->session()->flash('error', 'Update user failed');
         }
         //create here/
-        $this->userRepository->update($request->only('role','name','email'));
+        $this->userRepository->update($request->only('role','name','email'), $user);
         $user->syncRoles($request->input('role'));
         $request->session()->flash('success', 'User updated successful');
         return redirect()->route('users.index');

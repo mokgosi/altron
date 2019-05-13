@@ -23,10 +23,21 @@ class UserRequest extends FormRequest
      */
     public function rules()
     {
-        return [
-            'email' => 'sometimes|required|email|unique:users,email,'.$this->user->id,
-            'name' => 'required|string|max:50',
-            'password' => 'sometimes|required'
-        ];
+        if(isset($this->user->id)) {
+            return [
+                'email' => 'sometimes|required|email|unique:users,email,'.$this->user->id,
+                'name' => 'required|string|max:50',
+                'password' => 'sometimes|required'
+            ];
+        }  else {
+
+            return [
+                'email' => 'sometimes|required|email|unique:users',
+                'name' => 'required|string|max:50',
+                'password' => 'sometimes|required'
+            ];
+
+        }
+        
     }
 }

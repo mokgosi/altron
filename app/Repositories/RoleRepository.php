@@ -45,10 +45,10 @@ class RoleRepository extends BaseRepository implements RoleRepositoryInterface
      * @param int $id
      * @return bool
      */
-    public function update(array $attributes)
+    public function update(array $attributes,$role)
     {
         try {
-            return $this->model->update($attributes);
+            return $this->model->find($role->id)->update($attributes);
         } catch (QueryException $e) {
             throw new \Exception($e);
         }

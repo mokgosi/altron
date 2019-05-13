@@ -94,7 +94,7 @@ class PostController extends Controller
             $request->session()->flash('error', 'Update post failed.');
         }
         //create here/
-        $this->postRepository->update($request->all());
+        $this->postRepository->update($request->all(), $post);
         $request->session()->flash('success', 'Post updated successfully.');
         return redirect()->route('posts.index');
     }

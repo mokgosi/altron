@@ -98,7 +98,7 @@ class RoleController extends Controller
             $request->session()->flash('error', 'Edit role failed.');
         }
         
-        $this->roleRepository->update($request->all());
+        $this->roleRepository->update($request->only('name','guard_name'), $role);
         $role->syncPermissions($request->input('permissions'));
         $request->session()->flash('success', 'Edit role successful.');
         return redirect()->route('roles.index');

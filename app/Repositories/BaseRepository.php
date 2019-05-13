@@ -2,8 +2,9 @@
 namespace App\Repositories;
 
 use Illuminate\Database\Eloquent\Model;
+use App\Repositories\Interfaces\BaseRepositoryInterface;
 
-abstract class BaseRepository
+abstract class BaseRepository implements BaseRepositoryInterface
 {
     protected $model;
     /**
@@ -33,7 +34,7 @@ abstract class BaseRepository
      * @param array $data
      * @return bool
      */
-    public function update(array $data)
+    public function update(array $data, $model)
     {
         return $this->model->update($data);
     }
