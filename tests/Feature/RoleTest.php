@@ -28,14 +28,14 @@ class RoleTest extends TestCase
     {
         $attributes = [
             'name' => $this->faker->word,
-            'guard_name' => $this->faker->word
+            'guard_name' => 'web'
         ];
 
         $this->actingAs($this->user)
             ->post("/roles", $attributes)
             ->assertStatus(302);
 
-        // $this->assertDatabaseHas('roles', $attributes);
+        $this->assertDatabaseHas('roles', $attributes);
 
         $this->actingAs($this->user)
             ->get('/roles')
