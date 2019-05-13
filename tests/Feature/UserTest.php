@@ -28,10 +28,6 @@ class UserTest extends TestCase
     {
         $user = factory('App\User')->create();
 
-        // $this->actingAs($this->user)
-        //     ->post("/users", $attributes)
-        //     ->assertStatus(302);
-
         $this->assertDatabaseHas('users', ['name'=>$user->name, 'email'=>$user->email]);
 
         $this->actingAs($this->user)
